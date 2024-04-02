@@ -1,0 +1,8 @@
+export AWS_PROFILE=OCPV4_CLUSTER
+export INSTALLER_DOWNLOAD_LINK=https://mirror.openshift.com/pub/openshift-v4/aarch64/clients/ocp/stable/openshift-install-linux.tar.gz
+export CLI_DOWNLOAD_LINK=https://mirror.openshift.com/pub/openshift-v4/aarch64/clients/ocp/stable/openshift-client-linux.tar.gz
+export REGION=<Your AWS Region>
+export ACCESS_KEY_ID=<Your AWS Access key ID>
+export SECRET_ACCESS_KEY=<Your AWS Secret access key>
+export BASE_DOMAIN=<Your base domain>
+export CLUSTER_NAME=<Your chosen ocpv4 cluster name >

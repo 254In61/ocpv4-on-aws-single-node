@@ -1,0 +1,15 @@
+// This file is populated by Ansible playbook that runs prior to terraform.
+
+// AWS
+vpc_cidr               = "{{ VpcCidr }}"
+
+// Cluster-specific
+cluster_name           = "{{ cluster_name }}"
+
+// Cluster subnets per availability zone
+
+az = {
+        name           = "{{ region }}c",
+        priv-sub-cidr  = "{{ subnet_0_cidr }}",
+        pub-sub-cidr   = "{{ subnet_1_cidr }}" 
+    }

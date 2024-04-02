@@ -1,0 +1,5 @@
+---
+- name: install-config - Create install-config.yaml
+  template:
+    src: install-config.yaml.j2
+    dest: "{{ install_dir }}/install-config.yaml"

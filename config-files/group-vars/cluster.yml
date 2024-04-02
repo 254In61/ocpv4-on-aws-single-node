@@ -1,0 +1,42 @@
+---
+# aws_rhos_ami: "{{ lookup('ansible.builtin.env', 'RHCOS_AWS_AMI') }}"
+region: "{{ lookup('ansible.builtin.env', 'REGION') }}"
+
+# VPC details
+VpcCidr: 10.0.0.0/16
+AvailabilityZoneCount: 3
+SubnetBits: 12
+
+# Subnets
+# AZ a
+subnet_0_cidr: "10.0.1.0/24"
+subnet_1_cidr: "10.0.11.0/24"
+
+# Cluster network details
+cluster_name: "{{ lookup('ansible.builtin.env', 'CLUSTER_NAME') }}"
+base_domain: "{{ lookup('ansible.builtin.env', 'BASE_DOMAIN') }}"
+cluster_network_cidr: 10.128.0.0/14
+cluster_network_hostprefix: 23
+machine_network_cidr: 10.0.0.0/16 # Change to your AWS CIDR
+network_type: OpenShiftSDN 
+service_network: 172.30.0.0/16
+root_volume_size: 120
+
+# Cluster Machine details
+hyperthreading: Enabled
+ec2_instance_type: m6g.xlarge
+aws_machine_arch: arm64
+
+# Directories
+terraform_dir: aws-infra
+
+
+# Directory where all the action happens
+# Ensure it is outside this git repository to prevent leackage of secrets or sensitive documents online
+install_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}" 
+
+
+# AWS Details
+aws_region: "{{ lookup('ansible.builtin.env', 'REGION') }}"
+aws_access_key_id: "{{ lookup('ansible.builtin.env', 'ACCESS_KEY_ID') }}"
+aws_secret_access_key: "{{ lookup('ansible.builtin.env', 'SECRET_ACCESS_KEY') }}"

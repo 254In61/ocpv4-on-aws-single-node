@@ -1,0 +1,16 @@
+---
+# Populate infra-build/terraform.tfvars file
+- name: Populate infra-build/terraform.tfvars file
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: include vars
+      include_vars:
+        dir: group-vars
+
+    - import_role:
+        name: aws-creds
+    
+    - import_role:
+        name: terraform

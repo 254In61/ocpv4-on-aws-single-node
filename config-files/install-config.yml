@@ -1,0 +1,13 @@
+---
+# Playbook for building the infra
+- name: Prepare Infra
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: include vars
+      include_vars:
+        dir: group-vars
+
+    - import_role:
+        name: install-config

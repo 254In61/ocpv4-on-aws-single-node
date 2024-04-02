@@ -1,0 +1,6 @@
+---
+# Task to write the terraform variables for the Infra build.
+- name: tf-vars - Create terraform.tfvars
+  template:
+    src: terraform.tfvars.j2
+    dest: "../aws-infra/terraform.tfvars"

@@ -1,0 +1,5 @@
+# Ignore my local terraform.tfvars file
+aws-infra/terraform.tfvars
+
+# Ignore my local .terraform* stuff
+aws-infra/.terraform*
